@@ -1,18 +1,48 @@
 # IndieLedger
 
-To start your Phoenix server:
+Track and manage your creative finances.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Installation
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+- **Install asdf:**
+  - [asdf](https://github.com/asdf-vm/asdf)
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+- **Install asdf plugins:**
+  - `asdf plugin add erlang`
+  - `asdf plugin add elixir`
+  - `asdf plugin add postgres`
+  - `asdf plugin add nodejs`
 
-## Learn more
+- **Run asdf install:**
+  ```bash
+  asdf install
+  ```
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+- **Create a `config/dev.secret.exs` file and configure your database credentials:**
+  ```elixir
+  # config/dev.secret.exs
+
+  import Config
+
+  config :indie_ledger, IndieLedger.Repo,
+    username: "your_username",
+    password: "your_password",
+    database: "your_dev_database",
+    hostname: "localhost"
+  ```
+
+- **Install dependencies:**
+  ```bash
+  mix deps.get
+  ```
+
+- **Create and migrate the database:**
+  ```bash
+  mix ecto.create
+  mix ecto.migrate
+  ```
+
+- **Start the Phoenix server:**
+  ```bash
+  mix phx.server
+  ```

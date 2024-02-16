@@ -35,3 +35,6 @@ indie_ledger-*.tar
 npm-debug.log
 /assets/node_modules/
 
+/config/dev.secret.exs
+/config/runtime.dev.secret.exs
+/config/test.secret.exs
